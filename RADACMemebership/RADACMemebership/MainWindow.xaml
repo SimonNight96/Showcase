@@ -1,0 +1,143 @@
+﻿<Window x:Class="RADACMemebership.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RADACMemebership"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="448" Width="1288.087">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="227*"/>
+            <ColumnDefinition Width="1023*"/>
+        </Grid.ColumnDefinitions>
+
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="418" VerticalAlignment="Top" Width="1280" Grid.ColumnSpan="3">
+            <TabItem Header="View Database">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-619,-13">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="123*"/>
+                        <ColumnDefinition Width="199*"/>
+                        <ColumnDefinition Width="1567*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="MemberDataGrid" HorizontalAlignment="Left" Margin="5,13,0,0" VerticalAlignment="Top" Height="256" Width="1255" Grid.ColumnSpan="3" IsReadOnly="True" LoadingRow="MemberDataGrid_LoadingRow"/>
+                    <Label x:Name="label" Content="Key:" HorizontalAlignment="Left" Margin="70,287,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Rectangle Fill="LightGreen" HorizontalAlignment="Left" Height="22" Margin="107,291,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" Grid.ColumnSpan="2"/>
+                    <Rectangle Fill="LightSkyBlue" HorizontalAlignment="Left" Height="22" Margin="107,318,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" Grid.ColumnSpan="2"/>
+                    <Rectangle Fill="PaleVioletRed" HorizontalAlignment="Left" Height="22" Margin="107,344,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label1" Content="- Member should be paying senior membership." HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="34,290,0,0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label1_Copy" Content="- Member should be paying junior membership." HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="34,316,0,0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label1_Copy1" Content="- Member should be paying senior membership." HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="34,340,0,0" Grid.ColumnSpan="2"/>
+                    <Button x:Name="EmailBtn" Content="Email all" Grid.Column="2" HorizontalAlignment="Left" Margin="170,313,0,0" VerticalAlignment="Top" Width="112" Height="29" Click="EmailBtn_Click"/>
+                    <Button x:Name="LabelBtn" Content="Print Labels" Grid.Column="2" HorizontalAlignment="Left" Margin="318,313,0,0" VerticalAlignment="Top" Width="112" Height="29" Click="LabelBtn_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Add Member">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="96*"/>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="429*"/>
+                        <ColumnDefinition Width="99*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="FirstNameTbx" HorizontalAlignment="Left" Height="23" Margin="87,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="SecondNameTbx" HorizontalAlignment="Left" Height="23" Margin="87,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="InitalTbx" HorizontalAlignment="Left" Height="23" Margin="87,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="GenderCmbx" HorizontalAlignment="Left" Margin="109,38,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <TextBox x:Name="DataOfBirthTbx" HorizontalAlignment="Left" Height="23" Margin="109,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <ComboBox x:Name="MemberShipClassCmbx" HorizontalAlignment="Left" Margin="109,133,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <ComboBox x:Name="TypeOfFishingCmbx" HorizontalAlignment="Left" Margin="109,181,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <TextBox x:Name="DateOfJoiningTbx" HorizontalAlignment="Left" Height="23" Margin="376,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <ComboBox x:Name="MemberShipStatusCbmx" HorizontalAlignment="Left" Margin="376,82,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <TextBox x:Name="FirstLineOfAddressTbx" HorizontalAlignment="Left" Height="23" Margin="376,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="SecondLineofAddressTbx" HorizontalAlignment="Left" Height="23" Margin="376,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="ThirdLineAddressTbx" HorizontalAlignment="Left" Height="23" Margin="657,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="PostCodeTbx" HorizontalAlignment="Left" Height="23" Margin="657,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="EmailAddressTbx" HorizontalAlignment="Left" Height="23" Margin="657,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="CarRegTbx" HorizontalAlignment="Left" Height="23" Margin="657,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <Button x:Name="AddUserBtn" Content="Add" HorizontalAlignment="Left" Margin="234,251,0,0" VerticalAlignment="Top" Width="145" Click="AddUserBtn_Click" Grid.Column="2" Height="60"/>
+                    <TextBox x:Name="TelephoneTbx" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="657,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="NotesTbx" Grid.Column="2" HorizontalAlignment="Left" Height="75" Margin="657,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label2" Content="First Name:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label2_Copy" Content="Surname:" HorizontalAlignment="Left" Margin="21,85,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label2_Copy1" Content="Middle Inital:" HorizontalAlignment="Left" Margin="1,129,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label2_Copy2" Content="Gender:" HorizontalAlignment="Left" Margin="58,35,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy3" Content="D.O.B:" HorizontalAlignment="Left" Margin="67,85,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy4" Content="Membership Class:" HorizontalAlignment="Left" Margin="0,132,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy5" Content="Joining date:" HorizontalAlignment="Left" Margin="294,34,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy6" Content="Fishing type:" HorizontalAlignment="Left" Margin="32,181,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy7" Content="Membership status:" HorizontalAlignment="Left" Margin="257,82,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy8" Content="Address (First Line):" HorizontalAlignment="Left" Margin="266,129,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy9" Content="Address (Second Line):" HorizontalAlignment="Left" Margin="249,177,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy10" Content="Address (Third Line):" HorizontalAlignment="Left" Margin="510,36,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy11" Content="Postcode:" HorizontalAlignment="Left" Margin="567,82,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy12" Content="Email:" HorizontalAlignment="Left" Margin="587,128,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy13" Content="Car Registration:" HorizontalAlignment="Left" Margin="531,174,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy14" Content="Telephone:" HorizontalAlignment="Left" Margin="560,227,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy15" Content="Additional notes:" HorizontalAlignment="Left" Margin="528,301,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <TextBox x:Name="AppDateTbx" HorizontalAlignment="Left" Height="23" Margin="114,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy33" Content="Application date:" HorizontalAlignment="Left" Margin="9,212,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <ComboBox x:Name="DilWorthSupCmbx" HorizontalAlignment="Left" Margin="661,258,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy34" Content="Dilworth supplement:" HorizontalAlignment="Left" Margin="528,258,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Edit Record" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="88" Margin="-2,0,0,0">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="1136*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="SelectBtn" Content="Select" HorizontalAlignment="Left" Margin="52,23,0,0" VerticalAlignment="Top" Width="75" Click="SelectBtn_Click" Grid.Column="2"/>
+                    <TextBox x:Name="IDTbx" HorizontalAlignment="Left" Height="23" Margin="22,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <TextBox x:Name="EditFirstNameTbx" HorizontalAlignment="Left" Height="23" Margin="68,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <TextBox x:Name="EditSecondNameTbx" HorizontalAlignment="Left" Height="23" Margin="68,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <TextBox x:Name="EditInitalTbx" HorizontalAlignment="Left" Height="23" Margin="68,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <ComboBox x:Name="EditGenderCmbx" HorizontalAlignment="Left" Margin="190,72,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <TextBox x:Name="EditDataOfBirthTbx" HorizontalAlignment="Left" Height="23" Margin="190,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <ComboBox x:Name="EditMemberShipClassCmbx" HorizontalAlignment="Left" Margin="190,167,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <ComboBox x:Name="EditTypeOfFishingCmbx" HorizontalAlignment="Left" Margin="190,215,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <TextBox x:Name="EditDateOfJoiningTbx" HorizontalAlignment="Left" Height="23" Margin="453,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <ComboBox x:Name="EditMemberShipStatusCbmx" HorizontalAlignment="Left" Margin="453,119,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <TextBox x:Name="FirstLineOfAddressTbxEdit" HorizontalAlignment="Left" Height="23" Margin="453,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="SecondLineofAddressTbxEdit" HorizontalAlignment="Left" Height="23" Margin="453,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="EditThirdLineAddressTbx" HorizontalAlignment="Left" Height="23" Margin="728,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="EditPostCodeTbx" HorizontalAlignment="Left" Height="23" Margin="728,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="EditEmailAddressTbx" HorizontalAlignment="Left" Height="23" Margin="728,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="EditCarRegTbx" HorizontalAlignment="Left" Height="23" Margin="728,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <Button x:Name="UpdateBtn" Content="Update" Grid.Column="2" HorizontalAlignment="Left" Margin="270,260,0,0" VerticalAlignment="Top" Width="159" Click="UpdateBtn_Click" Height="56"/>
+                    <TextBox x:Name="EditTelephoneTbx" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="728,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="EditNotesTbx" Grid.Column="2" HorizontalAlignment="Left" Height="75" Margin="728,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290"/>
+                    <Label x:Name="label2_Copy16" Content="First Name:" HorizontalAlignment="Left" Margin="9,71,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label2_Copy17" Content="Surname:" HorizontalAlignment="Left" Margin="3,118,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label x:Name="label2_Copy18" Content="Middle Inital:" HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label2_Copy19" Content="Gender:" HorizontalAlignment="Left" Margin="134,68,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy20" Content="D.O.B:" HorizontalAlignment="Left" Margin="143,118,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy21" Content="Membership Class:" HorizontalAlignment="Left" Margin="76,165,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy22" Content="Joining date:" HorizontalAlignment="Left" Margin="363,68,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy23" Content="Fishing type:" HorizontalAlignment="Left" Margin="108,214,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="-0.351,-3.154"/>
+                    <Label x:Name="label2_Copy24" Content="Membership status:" HorizontalAlignment="Left" Margin="326,116,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy25" Content="Address (First Line):" HorizontalAlignment="Left" Margin="335,163,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy26" Content="Address (Second Line):" HorizontalAlignment="Left" Margin="318,211,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy27" Content="Address (Third Line):" HorizontalAlignment="Left" Margin="591,59,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy28" Content="Postcode:" HorizontalAlignment="Left" Margin="648,105,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy29" Content="Email:" HorizontalAlignment="Left" Margin="668,151,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy30" Content="Car Registration:" HorizontalAlignment="Left" Margin="612,197,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy31" Content="Telephone:" HorizontalAlignment="Left" Margin="641,250,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <Label x:Name="label2_Copy32" Content="Additional notes:" HorizontalAlignment="Left" Margin="609,290,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.777,0.692"/>
+                    <TextBox x:Name="EditAppDateTbx" HorizontalAlignment="Left" Height="23" Margin="117,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy35" Content="Application date:" HorizontalAlignment="Left" Margin="12,260,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <ComboBox x:Name="EditDilWorthSupCmbx" HorizontalAlignment="Left" Margin="117,294,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Column="2"/>
+                    <Label x:Name="label2_Copy36" Content="Dilworth supplement:" HorizontalAlignment="Left" Margin="101,294,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Pending_members" Header="Pending members" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="110" Margin="-3,0,0,0">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridForPending" HorizontalAlignment="Left" Margin="15,18,0,0" VerticalAlignment="Top" Height="194" Width="1232" IsReadOnly="True"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
