@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ACW</string>
+    <string name="Highscore">Wysoki wynik:</string>
+    <string name="choosepuzzle"> Pobierz puzzle:</string>
+    <string name="downloadpuzzleString"> Wybrane pobrane puzzle:</string>
+    <string name="playDownloaded"> Zagraj w puzzle</string>
+    <string name="playnewpuzzle"> POBIERZ POBIERZ</string>
+    <string name="currentScore">Aktualny wynik:</string>
+    <string name="FilterLabel"> Puzzle filtra:</string>
+    <string name="FilterLabelBtn">Filtr</string>
+</resources>
